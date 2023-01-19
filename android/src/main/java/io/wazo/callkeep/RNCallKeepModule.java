@@ -126,6 +126,11 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule {
     private WritableNativeArray delayedEvents;
     private boolean hasListeners = false;
 
+
+    @Override    
+    public boolean canOverrideExistingModule() {        
+        return true;    
+    }   
     public static RNCallKeepModule getInstance(ReactApplicationContext reactContext, boolean realContext) {
         if (instance == null) {
             Log.d(TAG, "[RNCallKeepModule] getInstance : " + (reactContext == null ? "null" : "ok"));
